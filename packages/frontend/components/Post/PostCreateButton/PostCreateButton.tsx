@@ -41,7 +41,7 @@ const PostCreateButton: FC<PostCreateButtonProps> = ({ channel, queryKey }) => {
         />
       )}
       <Button ghost fullWidth onClick={onClick}>
-        <Container>What do you want to talk about?</Container>
+        <Container>create your own post!</Container>
       </Button>
     </Root>
   );

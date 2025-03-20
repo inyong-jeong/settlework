@@ -20,7 +20,8 @@ app.use(compression());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    // origin: process.env.FRONTEND_URL,
+    origin: [process.env.FRONTEND_URL, `http://${process.env.LOCAL_IP}:3000`],
     credentials: true,
   })
 );

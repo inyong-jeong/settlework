@@ -1,5 +1,6 @@
 const API_PRODUCTION_URL = 'http://localhost:4000';
 const API_DEV_URL = 'http://localhost:4000';
+// const API_DEV_URL = 'http://192.168.0.3:4000';
 
 export const Config = {
   API_URL: process.env.NODE_ENV === 'production' ? API_PRODUCTION_URL : API_DEV_URL,

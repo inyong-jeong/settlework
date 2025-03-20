@@ -15,8 +15,8 @@ const Announcement: FC<AnnouncementProps> = ({ setIsAnnouncementOpen }) => {
 
   return (
     <Root>
-      <div>
-        ☆ If you like Orca, give it a star on{' '}
+      {/* <div>
+        ☆ If you like Settlework, give it a star on{' '}
         <Link href="https://github.com/dimimikadze/orca" target="__blank" rel="noreferrer noopener">
           GitHub
         </Link>{' '}
@@ -32,7 +32,7 @@ const Announcement: FC<AnnouncementProps> = ({ setIsAnnouncementOpen }) => {
           height="20"
           title="GitHub"
         ></Iframe>
-      </div>
+      </div> */}
 
       <StyledButton ghost color="white" onClick={onCloseClick}>
         ✕

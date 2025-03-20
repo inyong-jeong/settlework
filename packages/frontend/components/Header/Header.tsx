@@ -23,6 +23,7 @@ import HeaderNotifications from './HeaderNotifications';
 import Search from '../Search';
 import { RootState } from '../../store';
 import { useBreakpoints } from '../../utils';
+import LanguageSelector from '../LanguageSelector';
 
 interface HeaderProps {
   toggleSidebar?: () => void;
@@ -99,7 +100,7 @@ const Header: ForwardRefRenderFunction<HTMLButtonElement, HeaderProps> = ({ togg
         </Container>
 
         <Spacing right="sm" />
-
+        {/* <LanguageSelector /> */}
         <NotificationsAndAvatar>
           {authUser && (
             <div ref={notificationsRef}>

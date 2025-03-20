@@ -19,12 +19,16 @@ const fetchPostsByFollowing = async ({ pageParam = 0 }) => {
 const Home: FC = () => {
   const dispatch = useDispatch();
   const authUser = useSelector((state: RootState) => state.auth.user);
+  console.log('authUser :: ', authUser);
   const { data, isFetching, isFetchingNextPage } = useInfiniteScroll({
     key: 'postsByFollowing',
     apiCall: fetchPostsByFollowing,
-    enabled: authUser !== null,
+    // enabled: authUser !== null,
+    enabled: true,
     dataLimit: DataLimit.PostsByFollowing,
   });
+
+  console.log('data :::', data);
 
   const openAuthModal = () => {
     dispatch(openAuthPopup(PopupType.Sign_Up));
@@ -57,7 +61,16 @@ const Home: FC = () => {
                 </Button>
               )}
               <Spacing top="sm">
-                <Text>{!authUser && 'And'} Follow community members to see their posts in the News Feed.</Text>
+                <Text>
+                  {!authUser && 'hello!'} Yon can preview community member posts in the Channels Tab without login
+                </Text>
+                <br />
+                <br />
+
+                <Text>
+                  {!authUser && 'moreover'} If you sign up and follow some members, you can view all members post that
+                  you follow.
+                </Text>
               </Spacing>
             </Spacing>
           </Container>

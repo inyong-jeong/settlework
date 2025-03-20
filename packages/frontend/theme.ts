@@ -74,7 +74,7 @@ const theme: Theme = {
     general: {
       primary: '#0084FF',
       secondary: '#f50057',
-      success: '#00A699',
+      success: '#001f40',
       warning: '#FFB818',
       info: '#4169E1',
       error: '#F44335',

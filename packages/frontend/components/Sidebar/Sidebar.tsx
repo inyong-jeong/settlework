@@ -137,40 +137,43 @@ const Sidebar: ForwardRefRenderFunction<HTMLDivElement, SidebarProps> = ({ isOpe
       </UL>
 
       {channelItems?.length > 0 && (
-        <List
-          lockVertically
-          values={channelItems}
-          onChange={({ oldIndex, newIndex }) => {
-            setChannelItems(arrayMove(channelItems, oldIndex, newIndex));
-          }}
-          renderList={({ children, props }) => <UL {...props}>{children}</UL>}
-          renderItem={({ value, props }) => {
-            return (
-              <LI {...props}>
-                <ButtonLink
-                  fullWidth
-                  radius="none"
-                  href={`/channel/${value.name}`}
-                  color="text"
-                  active={value.name === router.query.name}
-                  size="sm"
-                >
-                  <ChannelName>{value.name}</ChannelName>
-                </ButtonLink>
+        <>
+          {/* <div style={{ fontSize: '18px', marginLeft: '8px', color: 'blue' }}>Lines</div> */}
+          <List
+            lockVertically
+            values={channelItems}
+            onChange={({ oldIndex, newIndex }) => {
+              setChannelItems(arrayMove(channelItems, oldIndex, newIndex));
+            }}
+            renderList={({ children, props }) => <UL {...props}>{children}</UL>}
+            renderItem={({ value, props }) => {
+              return (
+                <LI {...props}>
+                  <ButtonLink
+                    fullWidth
+                    radius="none"
+                    href={`/channel/${value.name}`}
+                    color="text"
+                    active={value.name === router.query.name}
+                    size="sm"
+                  >
+                    <ChannelName>{value.name}</ChannelName>
+                  </ButtonLink>
 
-                {isAdmin && (
-                  <Spacing right="xxs">
-                    <DragButton ghost data-movable-handle tabIndex={-1}>
-                      <DragIcon />
-                    </DragButton>
-                  </Spacing>
-                )}
+                  {isAdmin && (
+                    <Spacing right="xxs">
+                      <DragButton ghost data-movable-handle tabIndex={-1}>
+                        <DragIcon />
+                      </DragButton>
+                    </Spacing>
+                  )}
 
-                {isAdmin && <ChannelPopover channel={value} />}
-              </LI>
-            );
-          }}
-        />
+                  {isAdmin && <ChannelPopover channel={value} />}
+                </LI>
+              );
+            }}
+          />
+        </>
       )}
 
       {isAdmin && (

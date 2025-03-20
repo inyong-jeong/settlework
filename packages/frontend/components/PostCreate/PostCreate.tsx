@@ -215,7 +215,7 @@ const PostCreate: FC<PostCreateProps> = ({
             autoFocus
             onChange={handleChange}
             value={formValues.title}
-            placeholder={`What do you want to talk about, ${authUser.fullName}?`}
+            placeholder={`${authUser.fullName}, Share your thought to members!`}
           />
         </Spacing>
 
