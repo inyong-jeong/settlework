@@ -4,7 +4,7 @@ export enum AlertTypes {
   Info = 'info',
   Warning = 'warning',
 }
-
+// test
 export enum AlertAlignment {
   Top = 'top',
   Bottom = 'Bottom',
